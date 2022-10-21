@@ -1,2 +1,3 @@
 # 2022-haid-app
-test1
+Human-AI Interaction Design app repository
+Template project generated with expo

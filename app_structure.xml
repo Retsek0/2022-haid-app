@@ -1,0 +1,50 @@
+<!--This is the rough structure of the app-->
+<App>
+    <Login>
+        <!--This component contains the login form-->
+        <TextInput></TextInput>
+        <TextInput></TextInput>
+        <Button></Button>
+    </Login>
+    <Sign-Up>
+        <!--This component contains the registration form-->
+        <TextInput></TextInput>
+        <TextInput></TextInput>
+        <TextInput></TextInput>
+        <TextInput></TextInput>
+        <Button></Button>
+    </Sign-Up>
+    <Home>
+        <Activity-Menu>
+            <!--This component contains the explore, saved, bookings and profile options-->
+            <Explore>
+                <!--This component is rendered when explore is selected-->
+                <Filter></Filter>
+                <Options>
+                    <!--This component contains the flights, stays and cars taskbar. Props will have to be passed back up to 
+                        the <Explore> component in order to use selected option when displaying the right services-->
+                    <Button>Flights</Button>
+                    <Button>Stays</Button>
+                    <Button>Cars</Button>
+                </Options>
+                <Services>
+                    <!--This component will display the selected options in a scrollable list-->
+                    <!--Not 100% sure on the best way to do this but each option will be contained in the same component and given different props-->
+                    <!--Map an array of services (data) into an array of service components (interactive)-->
+                </Services>
+            </Explore>
+            <Saved>
+                <!--This component is rendered when saved is selected-->
+                <!--There is no design for this component yet-->
+            </Saved>
+            <Bookings>
+                <!--This component is rendered when bookings is selected-->
+                <!--There is no design for this component yet-->
+            </Bookings>
+            <Profile>
+                <!--This component is rendered when profile is selected-->
+                <!--There is no design for this component yet-->
+            </Profile>
+        </Activity-Menu>
+    </Home>
+</App>

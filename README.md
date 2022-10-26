@@ -53,9 +53,17 @@ I am using Expo on a wsl2 instance on my Windows machine. I installed it with
 sudo npm i -g expo-cli
 ```
 
-And you can launch the app by running this command in the HAIDapp directory.
+And you can launch the app by running this command in the HAIDapp directory. (Make sure your phone and computer are on the same wifi)
 ```
-sudo expo start
+sudo expo start --tunnel
 ```
 
 And you should see a QR code that you can scan on your phone using the Expo Go app.
+
+## Helpful links
+
+https://docs.expo.dev/tutorial
+
+https://reactnative.dev/docs
+
+https://www.youtube.com/watch?v=ANdSdIlgsEw

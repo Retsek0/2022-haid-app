@@ -59,3 +59,11 @@ sudo expo start
 ```
 
 And you should see a QR code that you can scan on your phone using the Expo Go app.
+
+## Helpful links
+
+https://docs.expo.dev/tutorial
+
+https://reactnative.dev/docs
+
+https://www.youtube.com/watch?v=ANdSdIlgsEw

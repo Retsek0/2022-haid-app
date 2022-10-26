@@ -1,7 +1,11 @@
 # 2022-haid-app
 
+## Warm-Up Task
+I have given everyone a warm-up task on the Kanban board. Assign the ticket to yourself and then complete the task as though it was a real ticket.
+
 ## Working with the Kanban board
 
+https://tree.taiga.io/project/vincent-zhao-human-ai-interaction-design-haiid/taskboard/sprint-four-code
 All the tickets for the code will be in "Sprint-Four-Code and report". When you pick up a ticket you want to assign the ticket to yourself and move it into the "In Progress" lane. Once you have submitted a pull request for your work you will want to move it into the "Ready For Test" lane. I will review PRs and move tickets into the "Closed" lane.
 
 ## Working with GitHub

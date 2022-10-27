@@ -15,8 +15,12 @@
         <Button></Button>
     </Sign-Up>
     <Home>
-        <Activity-Menu>
-            <!--This component contains the explore, saved, bookings and profile options-->
+        <StatusBar>
+            <!--This component contains a profile picture in a button that when clicked will take the user to their profile
+                it will also contain a greeting-->
+        </StatusBar>
+        <Activity>
+            <!--This component is a NavigationContainer which displays either explore, saved or bookings, which are all scrollable views-->
             <Explore>
                 <!--This component is rendered when explore is selected-->
                 <Filter></Filter>
@@ -41,10 +45,9 @@
                 <!--This component is rendered when bookings is selected-->
                 <!--There is no design for this component yet-->
             </Bookings>
-            <Profile>
-                <!--This component is rendered when profile is selected-->
-                <!--There is no design for this component yet-->
-            </Profile>
-        </Activity-Menu>
+        </Activity>
+        <ActivityMenu>
+            <!--This component contains a row of buttons allowing the user to navigate to Explore, Saved and Bookings-->
+        </ActivityMenu>
     </Home>
 </App>

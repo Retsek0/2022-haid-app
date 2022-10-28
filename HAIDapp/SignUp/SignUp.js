@@ -6,7 +6,7 @@ export default function SignUp(props) {
         <Text>Sign Up</Text>
         <Button
             title="Already have an account?"
-            onPress={() => props.navigation.navigate("login")}
+            onPress={() => props.navigation.navigate("Login")}
         />
       </View>
     );

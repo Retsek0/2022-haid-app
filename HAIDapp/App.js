@@ -1,4 +1,3 @@
-// App created by Kester,
 import { StyleSheet} from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -12,9 +11,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="login" component={Login}/>
-        <Stack.Screen name="signup" component={SignUp}/>
-        <Stack.Screen name="home" component={Home}/>
+        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Signup" component={SignUp}/>
+        <Stack.Screen name="Home" component={Home}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

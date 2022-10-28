@@ -7,11 +7,11 @@ export default function Login(props) {
             <Text>Login</Text>
             <Button 
                 title="Create an account"
-                onPress={() => props.navigation.navigate("signup")}
+                onPress={() => props.navigation.navigate("Signup")}
             />
             <Button 
                 title="Login"
-                onPress={() => props.navigation.navigate("home")}
+                onPress={() => props.navigation.navigate("Home")}
             />
         </View>
     );

@@ -12,7 +12,7 @@ return (
 
     {/* Background picture */}
     <View>
-      <Image source={require('./assets/TraveleurLogo.png')} />
+      <Image source={require('../assets/TraveleurLogo.png')} />
     </View>
 
     {/* Login box */}
@@ -28,9 +28,14 @@ return (
 
     {/* Dont have account */}
     <View style = { styles.lastWords}>
-      <Text> Don't have an account?</Text>
+      <Text> Don't have an account? </Text>
       {/* this later will be functioned as a button.  */}
-      <Text> Sign Up </Text>
+      <Text
+        style={styles.underline}
+        onPress={() => props.navigation.navigate("SignUp")}
+      > 
+        Sign Up 
+      </Text>
     </View>
 
     <StatusBar style="auto" />
@@ -85,6 +90,10 @@ btn: {
 lastWords: {
   flexDirection: 'row',
   marginTop: 40,
+},
+
+underline: {
+  textDecorationLine: 'underline'
 }
 
 });

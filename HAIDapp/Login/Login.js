@@ -29,7 +29,8 @@ return (
     {/* Dont have account */}
     <View style = { styles.lastWords}>
       <Text> Don't have an account?</Text>
-      <Text> Sign Up </Text> // this later will be functioned as a button.
+      {/* this later will be functioned as a button.  */}
+      <Text> Sign Up </Text>
     </View>
 
     <StatusBar style="auto" />

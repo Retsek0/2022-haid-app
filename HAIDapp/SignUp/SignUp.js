@@ -3,6 +3,7 @@ import {KeyboardAvoidingView , StyleSheet, Text, View, Button, TextInput, Image,
 import Icon from '@expo/vector-icons/AntDesign';
 
 // Vincent
+
 // Need to add comfirm button (like you have create new account)
 
 export default function SignUp(props) {
@@ -88,11 +89,6 @@ export default function SignUp(props) {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  
-  Image: {
-    maxHeight: 200,
-    marginTop: 20,
   },
   
   inputContainer: {

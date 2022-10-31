@@ -43,7 +43,10 @@ export default function Home(props) {
             },
             "tabBarStyle": [
             {
-                "display": "flex"
+                "display": "flex",
+                "height": 75,
+                "paddingBottom": 10,
+                "paddingTop": 15
             },
             null
             ],

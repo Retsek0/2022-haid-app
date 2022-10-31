@@ -1,34 +1,58 @@
 import React from 'react';
 
-import { View } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import ActivityMenu from "./ActivityMenu.js";
 import Explore from "../Explore/Explore.js";
 import Saved from "../Saved/Saved.js";
 import Bookings from "../Bookings/Bookings.js";
+import Profile from '../Profile/Profile.js';
 
-const Activity = createNativeStackNavigator();
-const navigationRef = React.createRef();
+const Tab = createBottomTabNavigator();
 
 export default function Home(props) {
-    
-    return (
-        <View style={{
-            flex: 1,
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-        }}>
-            <View style={{height: 50, backgroundColor: 'powderblue'}} /*This will be a status bar with a greeting and a button to access your profile/settings*/ /> 
-            <NavigationContainer independent={true} ref={navigationRef} >
-                <Activity.Navigator screenOptions={{headerShown: false, animation: 'none'}}>
-                    <Activity.Screen name="Explore" component={Explore}/>
-                    <Activity.Screen name="Saved" component={Saved}/>
-                    <Activity.Screen name="Bookings" component={Bookings}/>
-                </Activity.Navigator>
-            </NavigationContainer>
-            <ActivityMenu navigationRef={navigationRef}/>
-        </View>
-    );
-}
+      return (
+        <Tab.Navigator
+        initialRouteName={"Explore"}
+        screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            let rn = route.name;
+
+            if (rn === "Explore") {
+                iconName = focused ? 'search' : 'search';
+
+            } else if (rn === "Saved") {
+                iconName = focused ? 'heart' : 'heart';
+
+            } else if (rn === "Bookings") {
+                iconName = focused ? 'clipboard' : 'clipboard';
+
+            } else if (rn === "Profile") {
+                iconName = focused ? 'people' : 'people';
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+            },
+            "tabBarActiveTintColor": "black",
+            "tabBarInactiveTintColor": "grey",
+            "tabBarLabelStyle": {
+            "paddingBottom": 8,
+            "fontSize": 10
+            },
+            "tabBarStyle": [
+            {
+                "display": "flex"
+            },
+            null
+            ],
+            "headerShown": false
+        })}>
+            <Tab.Screen name={"Explore"} component={Explore} />
+            <Tab.Screen name={"Saved"} component={Saved} />
+            <Tab.Screen name={"Bookings"} component={Bookings} />
+            <Tab.Screen name={"Profile"} component={Profile} />
+        </Tab.Navigator>
+      );
+    }

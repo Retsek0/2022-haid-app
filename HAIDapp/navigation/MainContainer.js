@@ -43,13 +43,19 @@ function MainContainer() {
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-        })}
-        tabBarOptions={{
-          activeTintColor: 'black',
-          inactiveTintColor: 'grey',
-          labelStyle: { paddingBottom: 8, fontSize: 10 },
-          style: { padding: 15, height: 100}
-        }}>
+          "tabBarActiveTintColor": "black",
+          "tabBarInactiveTintColor": "grey",
+          "tabBarLabelStyle": {
+            "paddingBottom": 8,
+            "fontSize": 10
+          },
+          "tabBarStyle": [
+            {
+              "display": "flex"
+            },
+            null
+          ]
+        })}>
 
         <Tab.Screen name={Explore} component={ExploreScreen} />
         <Tab.Screen name={Saved} component={SavedScreen} />

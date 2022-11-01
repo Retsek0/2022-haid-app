@@ -20,16 +20,16 @@ export default function Home(props) {
             let rn = route.name;
 
             if (rn === "Explore") {
-                iconName = focused ? 'search' : 'search';
+                iconName = 'search';
 
             } else if (rn === "Saved") {
-                iconName = focused ? 'heart' : 'heart';
+                iconName = 'heart';
 
             } else if (rn === "Bookings") {
-                iconName = focused ? 'clipboard' : 'clipboard';
+                iconName = 'clipboard';
 
             } else if (rn === "Profile") {
-                iconName = focused ? 'people' : 'people';
+                iconName = 'people';
             }
 
             // You can return any component that you like here!

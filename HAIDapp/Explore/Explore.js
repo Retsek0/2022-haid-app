@@ -9,7 +9,7 @@ export default function Explore(props) {
             <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
                 <View>
                     {listings.map((listing, i) => {
-                        return <Listing key={i} imageBackground={listing.imageBackground}/>
+                        return <Listing key={i} listing={listing}/>
                     })}
                 </View>
             </ScrollView>

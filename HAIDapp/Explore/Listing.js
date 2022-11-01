@@ -3,7 +3,7 @@ import { ImageBackground, Text, StyleSheet } from 'react-native';
 export default function Listing(props) {
     return(
         <ImageBackground 
-            source={props.ImageBackground}
+            source={props.listing.image}
             style={{height: 130, width: 350, overflow: 'visible'}}
             imageStyle={{
                 justifyContent: 'center', 

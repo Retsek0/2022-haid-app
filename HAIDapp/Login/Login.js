@@ -2,28 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import {KeyboardAvoidingView , StyleSheet, Text, View, Button, TextInput, Image, Pressable} from 'react-native';
 import Icon from '@expo/vector-icons/AntDesign';
 
-import {
-  Lato_700Bold,
-} from '@expo-google-fonts/lato';
-
-import {
-  useFonts,
-  JosefinSans_400Regular_Italic,
-} from '@expo-google-fonts/josefin-sans';
-
 // Vincent
-// Finished
 
 export default function Login(props) {
-  let [fontsLoaded] = useFonts({
-    Lato_700Bold,
-    JosefinSans_400Regular_Italic,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  } else {
-    return (
+return (
   <KeyboardAvoidingView 
   style={styles.container}
   behavior="padding"
@@ -67,7 +49,7 @@ export default function Login(props) {
         <Text
           style={styles.underline}
         > 
-          Sign Up
+          Sign Up 
         </Text>
       </Pressable>
       
@@ -77,7 +59,7 @@ export default function Login(props) {
 
   </KeyboardAvoidingView>
 );
-}}
+}
 
 const styles = StyleSheet.create({
 
@@ -111,18 +93,16 @@ loginBtn: {
   marginTop: 20,
   backgroundColor: '#3F6A84',
   paddingVertical: 8,
-  width: 111,
-  height: 'auto',
-  borderRadius: 20,
+  width: "30%",
+  borderRadius: 23,
 },
 
+// need to add font
 logintext: {
   color: "#F8F9FA",
-  fontFamily: 'Lato_700Bold',
-  fontSize: 17,
-  fontWeight: 800,
 },
 
+// need to be more smooth
 textInput: {
   paddingHorizontal: 15,
   paddingVertical: 10,
@@ -131,13 +111,11 @@ textInput: {
 lastWords: {
   flexDirection: 'row',
   marginTop: 40,
-  height: 'auto'
 },
 
 underline: {
-  fontFamily: 'JosefinSans_400Regular_Italic',
-  color: "#3F6A84",
-  fontSize: 17
+  textDecorationLine: 'underline',
+  color: "#3F6A84"
 }
 
 });

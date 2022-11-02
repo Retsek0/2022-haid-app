@@ -1,28 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import {KeyboardAvoidingView , StyleSheet, Text, View, Button, TextInput, Image, Pressable} from 'react-native';
 import Icon from '@expo/vector-icons/AntDesign';
-import {
-  Lato_700Bold,
-} from '@expo-google-fonts/lato';
-
-import {
-  useFonts,
-  JosefinSans_400Regular_Italic,
-} from '@expo-google-fonts/josefin-sans';
 
 // Vincent
-// Finished
+
+// Need to add comfirm button (like you have create new account)
 
 export default function SignUp(props) {
-  let [fontsLoaded] = useFonts({
-    Lato_700Bold,
-    JosefinSans_400Regular_Italic,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  } else {
-    return (
+  return (
     <KeyboardAvoidingView 
     style={styles.container}
     behavior="padding"
@@ -64,14 +49,14 @@ export default function SignUp(props) {
       <View style = {styles.signBtn}>
   
         <Pressable onPress={() => props.navigation.navigate("Login")}>
-          <Text style= {styles.signtext}> Sign Up </Text>
+          <Text style= {styles.signtext}> SignUp </Text>
         </Pressable>
   
       </View>
   
       {/* Already have account */}
       <View style = { styles.lastWords}>
-        <Text color='rgba(0, 0, 0, 0.43)' fontFamily='JosefinSans_400Regular_Italic'> Already have an account? </Text>
+        <Text> Already have an account? </Text>
         <Pressable onPress={() => props.navigation.navigate("Login")}>
           <Text
             style={styles.underline}
@@ -86,14 +71,13 @@ export default function SignUp(props) {
   
     </KeyboardAvoidingView>
   );
-  }}
+  }
   
   const styles = StyleSheet.create({
   
 // need to put it at left
   beginning: {
-    fontFamily: "Lato_700Bold",
-    fontSize: 16,
+    fontSize: 15,
     marginHorizontal: 20,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -129,13 +113,12 @@ export default function SignUp(props) {
     borderRadius: 23,
   },
   
+  // need to add font
   signtext: {
     color: "#F8F9FA",
-    fontFamily: "Lato_700Bold",
-    fontWeight: 800,
-    fontSize: 17
   },
   
+  // need to be more smooth
   textInput: {
     paddingHorizontal: 15,
     paddingVertical: 10,
@@ -147,9 +130,8 @@ export default function SignUp(props) {
   },
   
   underline: {
-    color: "#3F6A84",
-    fontFamily: 'JosefinSans_400Regular_Italic',
-    fontSize: 17,
+    textDecorationLine: 'underline',
+    color: "#3F6A84"
   }
   
   });

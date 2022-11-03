@@ -48,7 +48,7 @@ export default function SignUp(props) {
       {/* SignUp */}
       <View style = {styles.signBtn}>
   
-        <Pressable onPress={() => props.navigation.navigate("Login")}>
+        <Pressable onPress={() => props.navigation.navigate("TermsAndConditions")}>
           <Text style= {styles.signtext}> SignUp </Text>
         </Pressable>
   

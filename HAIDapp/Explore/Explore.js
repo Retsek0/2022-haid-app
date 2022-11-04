@@ -8,6 +8,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Icon from '@expo/vector-icons/AntDesign';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function Explore(props) {
     const [filter, setFilter] = useState("airline");
@@ -16,7 +17,11 @@ export default function Explore(props) {
     if (searched) {
         return (
             <View style={styles.container}>
-                <View style={{ height: 50 }}/>
+                <View style={{ height: 36 }}/>
+                <Pressable style={[styles.inputContainer, {paddingLeft: 24}]} onPress={() => props.navigation.navigate("Filter")}>
+                    <Ionicons name={"options"} size={32} color={"grey"}/>
+                    <Text style={{paddingLeft: 12}}>Filter</Text>
+                </Pressable>
                 <View style={styles.filter}>
                     <Pressable 
                         style={styles.filterOption}
@@ -219,6 +224,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         height: 100,
+        borderBottomColor: "grey",
+        borderBottomWidth: 1 /*If someone can turn this into a drop shadow that would be great*/
     },
 
     filterOption: {

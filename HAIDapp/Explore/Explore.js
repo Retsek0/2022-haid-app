@@ -7,6 +7,7 @@ import { listings } from '../assets/listings';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
+import Icon from '@expo/vector-icons/AntDesign';
 
 export default function Explore(props) {
     const [filter, setFilter] = useState("airline");
@@ -50,31 +51,47 @@ export default function Explore(props) {
         );
     } else {
         return (
+
             <KeyboardAvoidingView 
                 style={styles.container}
                 behavior="padding"
             >
+
+                <View style={styles.header}>
+                    <Icon name="user" color={"#00716F"} size={60} />
+                    <Text style = {styles.greetingText0}> Hi, Kieran </Text>
+                </View>
+
+                <View>
+                    <Text style = {styles.greetingText1}> Where would you</Text>
+                    <Text style = {styles.greetingText2}> like to go?</Text>
+                </View>
+                
                 <View style = {styles.inputContainer}>
                     <View paddingHorizontal= {10} >
-                        <Entypo name="location-pin" color={"#00716F"} size={25} />
+                        <Entypo name="location-pin" color={"#00716F"} size={30} />
                     </View>
-                    <TextInput style = {styles.textInput} placeholder='Departing from' secureTextEntry />
+                    <TextInput style = {styles.textInput1} placeholder='City of Origin' />
+                    <View style={styles.line}></View>
+                    <TextInput style = {styles.textInput1} placeholder='City of Arrival' />
+                </View>
+                <View style = {styles.inputContainer}>
+                    <View paddingHorizontal= {13} >
+                        <Entypo name="calendar" color={"#00716F"} size={28} />
+                    </View>
+                    <TextInput style = {styles.textInput2} placeholder='Date of Depature' />
+                    <View style={styles.line}></View>
+                    <TextInput style = {styles.textInput2b} placeholder='Date of Arrival' />
                 </View>
                 <View style = {styles.inputContainer}>
                     <View paddingHorizontal= {10} >
-                        <FontAwesome5 name="globe-europe" color={"#00716F"} size={25} />
+                        <Icon name="user" color={"#00716F"} size={30} />
                     </View>
-                    <TextInput style = {styles.textInput} placeholder='Arriving in' />
-                </View>
-                <View style = {styles.inputContainer}>
-                    <View paddingHorizontal= {10} >
-                        <Entypo name="calendar" color={"#00716F"} size={25} />
-                    </View>
-                    <TextInput style = {styles.textInput} placeholder='Date of departure' secureTextEntry />
+                    <TextInput style = {styles.textInput3} placeholder='Number of People' />
                 </View>
                 <View style = {styles.searchBtn}>
                     <Pressable onPress={() => setSearched(true)}>
-                        <Text style= {styles.searchtext}> Search </Text>
+                        <Text style= {styles.searchtext}> SEARCH </Text>
                     </Pressable>
                 </View>
             </KeyboardAvoidingView>
@@ -83,36 +100,118 @@ export default function Explore(props) {
 }
     
 const styles = StyleSheet.create({
+    
+    header: {
+        flexDirection: "row",
+        paddingHorizontal: 30,
+        paddingVertical: 5,
+        marginBottom: 20,
+    },
+
+    greetingText0: {
+        fontSize: 20,
+        paddingHorizontal: 7,
+        width: "100%",
+        lineHeight: 20,
+        fontWeight: "700",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 30,
+        color: "#3F6A84",
+    },
+
+    greetingText1: {
+        paddingHorizontal: 30,
+        fontSize: 42,
+        width: "100%",
+        lineHeight: 42,
+        fontWeight: "600",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 30,
+    },
+
+    greetingText2: {
+        paddingHorizontal: 34,
+        fontSize: 42,
+        width: "100%",
+        lineHeight: 42,
+        fontWeight: "600",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 10,
+        marginBottom: 20,
+    },
 
     inputContainer: {
+        borderColor: "#3F6A84",
         flexDirection: "row",
-        borderRadius: 10,
+        borderRadius: 30,
         borderWidth: 2,
-        width: "60%",
-        height: 50,
-        marginTop: 20,
+        width: "80%",
+        height: 60,
+        marginTop: 40,
         marginHorizontal: 40,
         alignItems: 'center',
     },
 
-    textInput: {
-        paddingHorizontal: 15,
+    line: {
+        height: '100%',
+        width: 0.5,
+        backgroundColor: 'grey',
+        opacity: 0.5,
+        borderRadius: 1,
+        justifyContent: 'center'
+    },
+
+    textInput1: {
+        paddingHorizontal: 20,
         paddingVertical: 10,
+        textAlign: 'center',
+        justifyContent: 'center',
+        fontSize: 15,
+        fontWeight: "500",
+        color: "black"
+    },
+
+    textInput2: {
+        paddingHorizontal: 5,
+        paddingVertical: 10,
+        fontSize: 15,
+        fontWeight: "500",
+        color: "black"
+    },
+
+    textInput2b: {
+        paddingHorizontal: 19,
+        paddingVertical: 10,
+        fontSize: 15,
+        fontWeight: "500",
+        color: "black"
+    },
+
+    textInput3: {
+        paddingHorizontal: 60,
+        paddingVertical: 12,
+        fontSize: 15,
+        fontWeight: "500",
+        color: "black"
     },
 
     searchBtn: {
-        marginHorizontal: 55,
+        marginHorizontal: 155,
         alignItems: "center",
         justifyContent: 'center',
-        marginTop: 20,
+        marginTop: 35,
         backgroundColor: '#3F6A84',
-        paddingVertical: 8,
+        paddingVertical: 10,
         width: "30%",
-        borderRadius: 23,
+        borderRadius: 10,
     },
     
     searchtext: {
         color: "#F8F9FA",
+        fontWeight: "700"
     },
 
     filter: {

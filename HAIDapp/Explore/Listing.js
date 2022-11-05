@@ -1,6 +1,8 @@
 import { View, ImageBackground, Text, StyleSheet } from 'react-native';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Icon from '@expo/vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 export default function Listing(props) {
     return(
@@ -8,29 +10,30 @@ export default function Listing(props) {
             <View style={{backgroundColor: "black", borderRadius: 25}}>
                 <ImageBackground 
                     source={props.listing.image}
-                    style={{height: 130, width: 350, overflow: 'visible'}}
+                    style={styles.backgroundImg}
                     imageStyle={{
                         justifyContent: 'center', 
                         alignItems: 'center',
                         borderRadius: 25,
                         paddingTop: 50,
-                        opacity: 0.7
+                        opacity: 0.5
                     }}
                 >
+                    <Icon name="heart" style={styles.heart} size={20} />
                     <Text style={styles.innerText}>{props.listing.name}</Text>
                 </ImageBackground>
             </View>
-            <View style={styles.bottomText}>
+            <View style={styles.bottomContainer}>
                 <View style={{flexDirection: "row"}}>
                     <FontAwesome 
                         name={props.listing.rating <= 2 ? "star-o" : (props.listing.rating < 4 ? "star-half-empty" : "star")}
-                        size={12} 
-                        color={"grey"} 
-                        style={{paddingTop:4, paddingRight: 4}}
+                        size={16} 
+                        color={"black"} 
+                        style={{paddingTop:2, paddingRight: 4}}
                     />
-                    <Text>{props.listing.rating}</Text>
+                    <Text style={styles.ratingtxt}>{props.listing.rating}</Text>
                 </View>
-                <Text>£{props.listing.price}</Text>
+                <Text style={styles.pricetxt}>£{props.listing.price}</Text>
             </View>
         </View>
     );
@@ -38,15 +41,47 @@ export default function Listing(props) {
 
 const styles = StyleSheet.create({
     innerText: {
-        fontSize: 30,
-        lineHeight: 84,
-        fontWeight: "bold",
+        fontSize: 20,
+        lineHeight: 30,
+        fontWeight: "700",
         textAlign: "center",
-        color: "white"
+        color: "white",
+        marginVertical: 20,
     },
-    bottomText: {
+    bottomContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingHorizontal: 30
-    }
+        paddingHorizontal: 30,
+    },
+
+    ratingtxt: {
+        fontSize: 15,
+        fontWeight: "900",
+        color: "black"
+    },  
+
+    pricetxt: {
+        fontSize: 15,
+        fontWeight: "400"
+    },
+
+    backgroundImg: {
+        height: 160, 
+        width: 350, 
+        overflow: 'visible',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0,
+        shadowRadius: 2, 
+    },
+
+    heart: {
+        color: "red",
+        textAlign: "right",
+        marginHorizontal: "90%",
+        marginVertical: 10,
+        width: 20,
+        height: 20,
+        borderRadius: "20"
+    },
 });

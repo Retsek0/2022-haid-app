@@ -47,7 +47,7 @@ export default function SignUp(props) {
       <View style = {styles.signBtn}>
   
         <Pressable onPress={() => props.navigation.navigate("DataTracking")}>
-          <Text style= {styles.signtext}> SignUp </Text>
+          <Text style= {styles.signtext}> Sign Up </Text>
         </Pressable>
   
       </View>

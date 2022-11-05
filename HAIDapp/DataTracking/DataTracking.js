@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, Dimensions, TouchableOpacity, Alert, Pressable, Image} from 'react-native';
+import { View, Text, Pressable, Image} from 'react-native';
 import Checkbox from 'expo-checkbox';
 
 export default function DataTracking(props){
@@ -11,7 +11,7 @@ export default function DataTracking(props){
             <Text style={styles.greeting}>PERSONALISE YOUR EXPERIENCE</Text>
             <Image source={require('../assets/hotels/hotel1.jpg')} style = {styles.image} />
 
-            <View style={styles.section}>
+            <View style={[styles.section, {marginRight: "10%"}]}>
                 <View style={styles.singleCheckbox}>
                     <Checkbox
                     style={styles.checkbox}
@@ -48,7 +48,7 @@ export default function DataTracking(props){
             </View>      
 
             <View style={styles.finalContainer}>
-                <Text style={styles.finalText}>Traveler promises to never share your data with third parties. It will solely be used for personalising recommendations. You are free to view and delete the data our company has access to on your profile page.</Text>
+                <Text style={styles.finalText}>Traveleur promises to never share your data with third parties. It will solely be used for personalising recommendations. You are free to view and delete the data our company has access to on your profile page.</Text>
             </View>      
 
         </View>
@@ -80,7 +80,7 @@ const styles = {
 
     section: {
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         width: "76%",
     },
     singleCheckbox: {

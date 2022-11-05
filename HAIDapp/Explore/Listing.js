@@ -5,24 +5,32 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 export default function Listing(props) {
     return(
         <View>
-            <ImageBackground 
-                source={props.listing.image}
-                style={{height: 130, width: 350, overflow: 'visible'}}
-                imageStyle={{
-                    justifyContent: 'center', 
-                    alignItems: 'center',
-                    borderRadius: 25,
-                    paddingTop: 50,
-                }}
-            >
-                <Text style={styles.innerText}>{props.listing.name}</Text>
-            </ImageBackground>
+            <View style={{backgroundColor: "black", borderRadius: 25}}>
+                <ImageBackground 
+                    source={props.listing.image}
+                    style={{height: 130, width: 350, overflow: 'visible'}}
+                    imageStyle={{
+                        justifyContent: 'center', 
+                        alignItems: 'center',
+                        borderRadius: 25,
+                        paddingTop: 50,
+                        opacity: 0.7
+                    }}
+                >
+                    <Text style={styles.innerText}>{props.listing.name}</Text>
+                </ImageBackground>
+            </View>
             <View style={styles.bottomText}>
                 <View style={{flexDirection: "row"}}>
-                    <FontAwesome name={"star"} size={12} color={"grey"} style={{paddingTop:4, paddingRight: 4}}/>
-                    <Text>4.6</Text>
+                    <FontAwesome 
+                        name={props.listing.rating <= 2 ? "star-o" : (props.listing.rating < 4 ? "star-half-empty" : "star")}
+                        size={12} 
+                        color={"grey"} 
+                        style={{paddingTop:4, paddingRight: 4}}
+                    />
+                    <Text>{props.listing.rating}</Text>
                 </View>
-                <Text>£10</Text>
+                <Text>£{props.listing.price}</Text>
             </View>
         </View>
     );
@@ -34,6 +42,7 @@ const styles = StyleSheet.create({
         lineHeight: 84,
         fontWeight: "bold",
         textAlign: "center",
+        color: "white"
     },
     bottomText: {
         flexDirection: "row",

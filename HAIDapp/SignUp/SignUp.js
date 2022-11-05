@@ -4,8 +4,6 @@ import Icon from '@expo/vector-icons/AntDesign';
 
 // Vincent
 
-// Need to add comfirm button (like you have create new account)
-
 export default function SignUp(props) {
   return (
     <KeyboardAvoidingView 
@@ -48,7 +46,7 @@ export default function SignUp(props) {
       {/* SignUp */}
       <View style = {styles.signBtn}>
   
-        <Pressable onPress={() => props.navigation.navigate("TermsAndConditions")}>
+        <Pressable onPress={() => props.navigation.navigate("DataTracking")}>
           <Text style= {styles.signtext}> SignUp </Text>
         </Pressable>
   

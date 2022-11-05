@@ -9,7 +9,7 @@ export default function DataTracking(props){
         <View style={styles.container}>
 
             <Text style={styles.greeting}>PERSONALISE YOUR EXPERIENCE</Text>
-            <Image source={require('../assets/hotels/hotel1.jpg')} style = {styles.image} />
+            <Image source={require('../assets/datatracking.png')} style = {styles.image} />
 
             <View style={[styles.section, {marginRight: "10%"}]}>
                 <View style={styles.singleCheckbox}>
@@ -76,6 +76,7 @@ const styles = {
         maxWidth: 300,
         marginTop: 5,
         resizeMode: 'contain',
+        marginTop: "6%"
     },
 
     section: {

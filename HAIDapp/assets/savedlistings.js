@@ -15,7 +15,7 @@ const savedlistings = [
     },
     {
         type: 'hotel',
-        name: 'Hotel 2',
+        name: 'West Thicket Resort',
         image: require('../assets/hotels/hotel2.jpg'),
         price: "165 per night",
         rating: 3.9,
@@ -36,7 +36,7 @@ const savedlistings = [
     },
     {
         type: 'hotel',
-        name: 'Hotel 3',
+        name: 'Stanton\'s Holidays',
         image: require('../assets/hotels/hotel3.jpg'),
         price: "242 per night",
         rating: 4.0,

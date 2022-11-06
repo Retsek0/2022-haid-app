@@ -1,11 +1,9 @@
 import * as React from 'react';
-import {KeyboardAvoidingView, View, Text, ScrollView, TouchableOpacity, Alert, Pressable, TextInput } from 'react-native';
-import Icon from '@expo/vector-icons/AntDesign';
-import Entypo from 'react-native-vector-icons/Entypo';
+import {ScrollView, View, Text, Pressable, TextInput } from 'react-native';
 
-export default function Payments({ props }) {
+export default function Payment({ props }) {
     return (
-        <KeyboardAvoidingView style={styles.container}>
+        <ScrollView style={styles.container}>
 
             <View style={styles.header}>
                 <Text style={styles.headerText}> Payment Details </Text>
@@ -28,7 +26,7 @@ export default function Payments({ props }) {
 
             <View style={styles.checkContainer}>
 
-                <Text style={styles.checkText}> Total Price: $100.20 (Saved $40)</Text>
+                <Text style={styles.checkText}>Total Price: $734.20</Text>
                 <View style = {styles.checkBtn}>
                     {/* To booking confirm page */}
                     <Pressable onPress={() => props.navigation.navigate("Payments")}>
@@ -38,13 +36,17 @@ export default function Payments({ props }) {
                 </View>
             </View>
             {/* Next will be the footer */}
-        </KeyboardAvoidingView>
+        </ScrollView>
     );
 }
 
 const styles = {
     container: {
         backgroundColor: "#F8F9FA",
+    },
+
+    textInput: {
+        width: "100%"
     },
 
     header: {

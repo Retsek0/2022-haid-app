@@ -20,7 +20,6 @@ export default function HotelFiltering(props) {
 
     const [isChecked11, setChecked11] = useState(false);
     const [isChecked12, setChecked12] = useState(false);
-    const [isChecked13, setChecked13] = useState(false);
 
     return(
 
@@ -136,9 +135,9 @@ export default function HotelFiltering(props) {
 
                             <Checkbox
                             style={styles.checkbox}
-                            value={isChecked7}
-                            onValueChange={setChecked7}
-                            color={isChecked7 ? '#4630EB' : undefined}
+                            value={isChecked8}
+                            onValueChange={setChecked8}
+                            color={isChecked8 ? '#4630EB' : undefined}
                             />
                             <Text style={styles.paragraph}>Free WIFI</Text>
 
@@ -147,9 +146,9 @@ export default function HotelFiltering(props) {
 
                             <Checkbox
                             style={styles.checkbox}
-                            value={isChecked7}
-                            onValueChange={setChecked7}
-                            color={isChecked7 ? '#4630EB' : undefined}
+                            value={isChecked9}
+                            onValueChange={setChecked9}
+                            color={isChecked9 ? '#4630EB' : undefined}
                             />
                             <Text style={styles.paragraph}>Washing & Dry service</Text>
 
@@ -158,9 +157,9 @@ export default function HotelFiltering(props) {
 
                             <Checkbox
                             style={styles.checkbox}
-                            value={isChecked7}
-                            onValueChange={setChecked7}
-                            color={isChecked7 ? '#4630EB' : undefined}
+                            value={isChecked10}
+                            onValueChange={setChecked10}
+                            color={isChecked10 ? '#4630EB' : undefined}
                             />
                             <Text style={styles.paragraph}>A/C</Text>
 
@@ -169,9 +168,9 @@ export default function HotelFiltering(props) {
 
                             <Checkbox
                             style={styles.checkbox}
-                            value={isChecked7}
-                            onValueChange={setChecked7}
-                            color={isChecked7 ? '#4630EB' : undefined}
+                            value={isChecked11}
+                            onValueChange={setChecked11}
+                            color={isChecked11 ? '#4630EB' : undefined}
                             />
                             <Text style={styles.paragraph}>Free breakfast</Text>
 
@@ -180,9 +179,9 @@ export default function HotelFiltering(props) {
 
                             <Checkbox
                             style={styles.checkbox}
-                            value={isChecked7}
-                            onValueChange={setChecked7}
-                            color={isChecked7 ? '#4630EB' : undefined}
+                            value={isChecked12}
+                            onValueChange={setChecked12}
+                            color={isChecked12 ? '#4630EB' : undefined}
                             />
                             <Text style={styles.paragraph}>Free Parking</Text>
 

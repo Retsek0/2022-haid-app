@@ -44,7 +44,7 @@ export default function Explore(props) {
                     <View>
                         <View style={{height: 12}} />
                         {listings.filter(listing => listing.type == filter).map((listing, i) => {
-                            return <View key={i}><Listing listing={listing}/><View style={{height: 6}} /></View>
+                            return <View key={i}><Listing listing={listing} saved={false}/><View style={{height: 6}} /></View>
                         })}
                     </View>
                 </ScrollView>

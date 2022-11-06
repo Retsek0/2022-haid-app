@@ -1,10 +1,13 @@
-import { View, ImageBackground, Text, StyleSheet } from 'react-native';
+import { useState } from 'react';
+
+import { View, ImageBackground, Text, StyleSheet, Pressable } from 'react-native';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Icon from '@expo/vector-icons/AntDesign';
-import Entypo from 'react-native-vector-icons/Entypo';
 
 export default function Listing(props) {
+    const [saved, setSaved] = useState(props.saved);
+    
     return(
         <View>
             <View style={{backgroundColor: "black", borderRadius: 25}}>
@@ -19,7 +22,9 @@ export default function Listing(props) {
                         opacity: 0.5
                     }}
                 >
-                    <Icon name="heart" style={styles.heart} size={20} />
+                    <Pressable onPress={() => setSaved(!saved)}>
+                        <Icon name={saved ? "heart" : "hearto"} style={styles.heart} size={20} />
+                    </Pressable>
                     <Text style={styles.innerText}>{props.listing.name}</Text>
                 </ImageBackground>
             </View>
@@ -82,6 +87,6 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         width: 20,
         height: 20,
-        borderRadius: "20"
+        borderRadius: 20
     },
 });

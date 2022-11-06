@@ -5,8 +5,7 @@ import Login from "./Login/Login.js";
 import SignUp from './SignUp/SignUp.js';
 import LandingPage from "./LandingPage/LandingPage.js";
 import TermsAndConditions from "./TermsAndConditions/TermsAndConditions.js";
-import DataTracking from "./DataTracking/DataTracking.js";
-
+import DataTracking from "./DataTracking/DataTracking";
 const Stack = createNativeStackNavigator();
 
 export default function App() {

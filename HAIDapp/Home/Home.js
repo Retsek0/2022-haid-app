@@ -5,7 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Explore from "../Explore/Explore.js";
 import Saved from "../Saved/Saved.js";
-import Bookings from "../Bookings/Bookings.js";
+import Checkout from "../Checkout/Checkout.js";
 import Profile from '../Profile/Profile.js';
 
 const Tab = createBottomTabNavigator();
@@ -25,8 +25,8 @@ export default function Home(props) {
             } else if (rn === "Saved") {
                 iconName = 'heart';
 
-            } else if (rn === "Bookings") {
-                iconName = 'clipboard';
+            } else if (rn === "Checkout") {
+                iconName = 'cart';
 
             } else if (rn === "Profile") {
                 iconName = 'people';
@@ -54,7 +54,7 @@ export default function Home(props) {
         })}>
             <Tab.Screen name={"Explore"} component={Explore} />
             <Tab.Screen name={"Saved"} component={Saved} />
-            <Tab.Screen name={"Bookings"} component={Bookings} />
+            <Tab.Screen name={"Checkout"} component={Checkout} />
             <Tab.Screen name={"Profile"} component={Profile} />
         </Tab.Navigator>
       );

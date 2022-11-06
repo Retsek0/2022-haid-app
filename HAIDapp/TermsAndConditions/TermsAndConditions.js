@@ -25,7 +25,7 @@ Unauthorised use of this website may give rise to a claim for damages and/or be 
             </ScrollView>
 
             <TouchableOpacity onPress={ function () {
-                Alert.alert('Do you accept?', 'Terms and conditions accepted', [
+                Alert.alert('Do you accept?', '', [
                     {
                       text: 'No',
                       onPress: () => Alert.alert('Your data has been removed', '', [
@@ -37,10 +37,10 @@ Unauthorised use of this website may give rise to a claim for damages and/or be 
                       ]),
                       style: 'default',
                     },
-                    { text: 'Yes', onPress: () => Alert.alert('Thanks for your trust', '', [
+                    { text: 'Yes', onPress: () => Alert.alert('Terms and conditions accepted \n Thanks for your trust', '', [
                         {
                             text: 'Okay',
-                            onPress: () => props.navigation.navigate("Login"),
+                            onPress: () => props.navigation.navigate("DataTracking"),
                             style: 'default'
                         }
                       ]),

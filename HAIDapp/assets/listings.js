@@ -3,91 +3,127 @@ const listings = [
         type: 'airline',
         name: 'British Airways',
         image: require('../assets/planes/british_airways.jpg'),
+        price: "303 with return",
+        rating: 3.8,
     },
     {
         type: 'airline',
         name: 'EasyJet',
         image: require('../assets/planes/easyjet.jpg'),
+        price: "293 with return",
+        rating: 2.3,
     },
     {
         type: 'airline',
         name: 'Emirates',
         image: require('../assets/planes/emirates.png'),
+        price: "219 with return",
+        rating: 4.2,
     },
     {
         type: 'airline',
         name: 'Qatar Airways',
         image: require('../assets/planes/qatar_airways.jpg'),
+        price: "333 with return",
+        rating: 4.5,
     },
     {
         type: 'airline',
         name: 'Ryanair',
         image: require('../assets/planes/ryanair.jpg'),
+        price: "238 with return",
+        rating: 2.0,
     },
     {
         type: 'airline',
         name: 'Singapore Airlines',
         image: require('../assets/planes/singapore_airlines.jpg'),
+        price: "344 with return",
+        rating: 4.7,
     },
     {
         type: 'hotel',
         name: 'Hotel 1',
-        image: require('../assets/hotels/hotel1.jpg')
+        image: require('../assets/hotels/hotel1.jpg'),
+        price: "241 per night",
+        rating: 4.5,
     },
     {
         type: 'hotel',
         name: 'Hotel 2',
-        image: require('../assets/hotels/hotel2.jpg')
+        image: require('../assets/hotels/hotel2.jpg'),
+        price: "165 per night",
+        rating: 3.9,
     },
     {
         type: 'hotel',
         name: 'Hotel 3',
-        image: require('../assets/hotels/hotel3.jpg')
+        image: require('../assets/hotels/hotel3.jpg'),
+        price: "242 per night",
+        rating: 4.0,
     },
     {
         type: 'hotel',
         name: 'Hotel 4',
-        image: require('../assets/hotels/hotel4.jpg')
+        image: require('../assets/hotels/hotel4.jpg'),
+        price: "230 per night",
+        rating: 3.8,
     },
     {
         type: 'hotel',
         name: 'Hotel 5',
-        image: require('../assets/hotels/hotel5.jpg')
+        image: require('../assets/hotels/hotel5.jpg'),
+        price: "193 per night",
+        rating: 2.9,
     },
     {
         type: 'hotel',
         name: 'Hotel 6',
-        image: require('../assets/hotels/hotel6.jpg')
+        image: require('../assets/hotels/hotel6.jpg'),
+        price: "233 per night",
+        rating: 1.9,
     },
     {
         type: 'car',
         name: 'Chevrolet Spark',
-        image: require('../assets/cars/chevrolet_spark.jpg')
+        image: require('../assets/cars/chevrolet_spark.jpg'),
+        price: "288 per day",
+        rating: 2.0,
     },
     {
         type: 'car',
         name: 'Ford Focus',
-        image: require('../assets/cars/ford_focus.jpg')
+        image: require('../assets/cars/ford_focus.jpg'),
+        price: "301 per day",
+        rating: 3.7,
     },
     {
         type: 'car',
         name: 'Kia Soul',
-        image: require('../assets/cars/kia_soul.jpg')
+        image: require('../assets/cars/kia_soul.jpg'),
+        price: "308 per day",
+        rating: 2.3,
     },
     {
         type: 'car',
         name: 'Nissan Armada',
-        image: require('../assets/cars/nissan_armada.jpg')
+        image: require('../assets/cars/nissan_armada.jpg'),
+        price: "294 per day",
+        rating: 4,
     },
     {
         type: 'car',
         name: 'Toyota Corolla',
-        image: require('../assets/cars/toyota_corolla.jpg')
+        image: require('../assets/cars/toyota_corolla.jpg'),
+        price: "340 per day",
+        rating: 3.7,
     },
     {
         type: 'car',
         name: 'Volkswagen Jetta',
-        image: require('../assets/cars/vw_jetta.jpg')
+        image: require('../assets/cars/vw_jetta.jpg'),
+        price: "343 per day",
+        rating: 4.2,
     },
 
 ]

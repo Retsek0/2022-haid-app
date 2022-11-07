@@ -8,8 +8,9 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Icon from '@expo/vector-icons/AntDesign';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function Explore(props) {
+export default function ExploreNav(props) {
     const [filter, setFilter] = useState("airline");
     const [searched, setSearched] = useState(false);
 
@@ -17,9 +18,23 @@ export default function Explore(props) {
         return (
             <View style={styles.container}>
                 <View style={{ height: 50 }}/>
+                <Pressable style = {styles.inputContainer} onPress={() => {
+                    if (filter == "airline") {
+                        props.navigation.navigate("AirlineFiltering");
+                    } else if (filter == "hotel") {
+                        props.navigation.navigate("HotelFiltering");
+                    } else {
+                        props.navigation.navigate("CarFiltering")
+                    }
+                }}>
+                    <View paddingHorizontal= {10} >
+                        <Ionicons name="options" color={"#00716F"} size={35} style={{paddingLeft: 14}}/>
+                    </View>
+                    <Text style = {styles.textInput}>Filter</Text>
+                </Pressable>
                 <View style={styles.filter}>
                     <Pressable 
-                        style={styles.filterOption}
+                        style={styles.filterOption} 
                         onPress={() => setFilter("airline")}
                     >
                         <FontAwesome5 name={"plane"} size={40} color={filter == "airline" ? "black" : "grey"} style={{paddingTop:6}}/>
@@ -107,6 +122,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         paddingVertical: 5,
         marginBottom: 20,
+    },
+
+    textInput: {
+        paddingHorizontal: 5,
+        paddingVertical: 10,
+        fontSize: 20
     },
 
     greetingText0: {

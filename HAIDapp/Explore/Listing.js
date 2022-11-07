@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { View, ImageBackground, Text, StyleSheet, Pressable } from 'react-native';
+import { View, ImageBackground, Text, StyleSheet, Pressable, ToastAndroid } from 'react-native';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Icon from '@expo/vector-icons/AntDesign';
@@ -22,9 +22,14 @@ export default function Listing(props) {
                         opacity: 0.5
                     }}
                 >
-                    <Pressable onPress={() => setSaved(!saved)}>
-                        <Icon name={saved ? "heart" : "hearto"} style={styles.heart} size={20} />
-                    </Pressable>
+                    <View style={{flexDirection:"row-reverse"}}>
+                        <Pressable onPress={() => setSaved(!saved)}>
+                            <Icon name={saved ? "heart" : "hearto"} style={styles.heart} size={20} />
+                        </Pressable>
+                        <Pressable onPress={() => ToastAndroid.show("Added to cart!", ToastAndroid.SHORT)}>
+                            <Icon name="shoppingcart" style={styles.cart} size={20} />
+                        </Pressable>
+                    </View>
                     <Text style={styles.innerText}>{props.listing.name}</Text>
                 </ImageBackground>
             </View>
@@ -51,7 +56,6 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         textAlign: "center",
         color: "white",
-        marginVertical: 20,
     },
     bottomContainer: {
         flexDirection: "row",
@@ -82,11 +86,21 @@ const styles = StyleSheet.create({
 
     heart: {
         color: "red",
-        textAlign: "right",
-        marginHorizontal: "90%",
-        marginVertical: 10,
+        marginHorizontal: 20,
+        marginVertical: 20,
         width: 20,
         height: 20,
         borderRadius: 20
+    },
+
+    cart: {
+        color: "white",
+        marginVertical: 15,
+        width: 30,
+        height: 30,
+        borderRadius: 20,
+        backgroundColor: "grey",
+        paddingTop: 5,
+        paddingLeft: 4
     },
 });

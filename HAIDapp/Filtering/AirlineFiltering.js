@@ -62,7 +62,7 @@ export default function AirlineFiltering(props) {
                     </View>
 
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> User rating: </Text>
+                        <Text style={styles.name}> User rating </Text>
                         <View style={styles.rating}>
 
                         <View style={styles.checkBox}>
@@ -130,7 +130,7 @@ export default function AirlineFiltering(props) {
                     </View>
 
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> Class: </Text>
+                        <Text style={styles.name}> Class </Text>
 
 
                         <View style={styles.checkBox}>
@@ -169,7 +169,7 @@ export default function AirlineFiltering(props) {
                     </View>
 
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> Changes: </Text>
+                        <Text style={styles.name}> Changes</Text>
                         <View style={styles.checkBox}>
 
                             <Checkbox
@@ -206,13 +206,13 @@ export default function AirlineFiltering(props) {
 
                     <View style = {styles.eachBtn}>
 
-                        <Pressable onPress={() => props.navigation.navigate("Home")}>
+                        <Pressable onPress={() => props.navigation.navigate("Explore")}>
                             <Text style= {styles.applytext}> Apply </Text>
                         </Pressable>
                     </View>
 
                     <View style = {styles.eachBtn}>
-                        <Pressable onPress={() => alert('Data has been cleared')}>
+                        <Pressable onPress={() => props.navigation.navigate("Explore")}>
                             <Text style= {styles.applytext}> Cancel </Text>
                         </Pressable>
                     </View>

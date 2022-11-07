@@ -32,10 +32,8 @@ export default function AirelineFiltering(props) {
                 </View>
 
                 <View style={styles.mainFiltering}>
-                    <Text style={styles.title}> Car Filiting </Text>
-
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> Price: </Text>
+                        <Text style={styles.name}> Price </Text>
 
                         <View style={styles.checkBox}>
                             
@@ -45,7 +43,7 @@ export default function AirelineFiltering(props) {
                             onValueChange={setChecked1}
                             color={isChecked1 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>Ascending</Text>
+                            <Text style={styles.paragraph}>Lowest to highest</Text>
 
                         </View>
 
@@ -57,13 +55,13 @@ export default function AirelineFiltering(props) {
                             onValueChange={setChecked2}
                             color={isChecked2 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>Descending</Text>
+                            <Text style={styles.paragraph}>Highest to lowest</Text>
                         </View>
 
                     </View>
 
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> User rating: </Text>
+                        <Text style={styles.name}> User rating </Text>
                         <View style={styles.rating}>
 
                         <View style={styles.checkBox}>
@@ -131,7 +129,7 @@ export default function AirelineFiltering(props) {
                     </View>
 
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> Number of Seats: </Text>
+                        <Text style={styles.name}> Number of Seats </Text>
 
 
                         <View style={styles.checkBox}>
@@ -204,16 +202,13 @@ export default function AirelineFiltering(props) {
                 </View>
 
                 <View style={styles.btnContainer}>
-
                     <View style = {styles.eachBtn}>
-
-                        <Pressable onPress={() => props.navigation.navigate("Home")}>
+                        <Pressable onPress={() => props.navigation.navigate("Explore")}>
                             <Text style= {styles.applytext}> Apply </Text>
                         </Pressable>
                     </View>
-
                     <View style = {styles.eachBtn}>
-                        <Pressable onPress={() => alert('Data has been cleared')}>
+                        <Pressable onPress={() => props.navigation.navigate("Explore")}>
                             <Text style= {styles.applytext}> Cancel </Text>
                         </Pressable>
                     </View>
@@ -231,8 +226,9 @@ const styles = StyleSheet.create({
 
     header: {
         flexDirection: "row",
+        paddingTop: 50,
+        paddingBottom: 10,
         paddingHorizontal: "20%",
-        paddingVertical: "10%",
         justifyContent: 'center',
         backgroundColor: "white",
         shadowColor: "#000",
@@ -254,7 +250,7 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 30,
+        marginTop: 36,
         color: "#3F6A84",
     },
 
@@ -271,7 +267,6 @@ const styles = StyleSheet.create({
     eachFilter: {
         marginTop: 25,
         width: "75%",
-        height: "15.6%",
         backgroundColor: "white",
         shadowColor: "#000",
         shadowOffset: {
@@ -315,10 +310,12 @@ const styles = StyleSheet.create({
 
     btnContainer: {
         flexDirection: "row",
+        justifyContent: "center",
+        marginTop: 25,
     },
 
     eachBtn: {
-        marginHorizontal: 45,
+        marginHorizontal: 20,
         alignItems: "center",
         justifyContent: 'center',
         backgroundColor: '#3F6A84',

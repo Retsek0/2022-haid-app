@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {StyleSheet, Text, View, Pressable} from 'react-native';
+import {StyleSheet, Text, View, Pressable, ScrollView} from 'react-native';
 import Icon from '@expo/vector-icons/AntDesign';
 import Checkbox from 'expo-checkbox';
 
-export default function AirelineFiltering(props) {
+export default function AirlineFiltering(props) {
 
     const [isChecked1, setChecked1] = useState(false);
     const [isChecked2, setChecked2] = useState(false);
@@ -27,15 +27,14 @@ export default function AirelineFiltering(props) {
         <View style={styles.container}>
 
                 <View style={styles.header}>
-                    <Icon name="user" color={"#00716F"} size={60} />
+                    <Icon name="user" color={"#00716F"} size={60} style={{paddingTop: 8}} />
                     <Text style = {styles.greetingText}> Hi, Kieran </Text>
                 </View>
 
                 <View style={styles.mainFiltering}>
-                    <Text style={styles.title}> Airline Filiting </Text>
 
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> Price: </Text>
+                        <Text style={styles.name}> Price</Text>
 
                         <View style={styles.checkBox}>
                             
@@ -45,7 +44,7 @@ export default function AirelineFiltering(props) {
                             onValueChange={setChecked1}
                             color={isChecked1 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>Ascending</Text>
+                            <Text style={styles.paragraph}>Lowest to highest</Text>
 
                         </View>
 
@@ -57,7 +56,7 @@ export default function AirelineFiltering(props) {
                             onValueChange={setChecked2}
                             color={isChecked2 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>Descending</Text>
+                            <Text style={styles.paragraph}>Highest to lowest</Text>
                         </View>
 
                     </View>
@@ -150,7 +149,7 @@ export default function AirelineFiltering(props) {
                             onValueChange={setChecked9}
                             color={isChecked9 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>Economic</Text>
+                            <Text style={styles.paragraph}>Economy</Text>
 
                         </View>
 
@@ -198,7 +197,7 @@ export default function AirelineFiltering(props) {
                             onValueChange={setChecked13}
                             color={isChecked13 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>More than One change</Text>
+                            <Text style={styles.paragraph}>More than one change</Text>
                         </View>
                     </View>
                 </View>
@@ -231,8 +230,9 @@ const styles = StyleSheet.create({
 
     header: {
         flexDirection: "row",
+        paddingTop: 50,
+        paddingBottom: 10,
         paddingHorizontal: "20%",
-        paddingVertical: "10%",
         justifyContent: 'center',
         backgroundColor: "white",
         shadowColor: "#000",
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 30,
+        marginTop: 36,
         color: "#3F6A84",
     },
 
@@ -271,7 +271,6 @@ const styles = StyleSheet.create({
     eachFilter: {
         marginTop: 25,
         width: "75%",
-        height: "15.6%",
         backgroundColor: "white",
         shadowColor: "#000",
         shadowOffset: {
@@ -315,10 +314,12 @@ const styles = StyleSheet.create({
 
     btnContainer: {
         flexDirection: "row",
+        justifyContent: "center",
+        marginTop: 25,
     },
 
     eachBtn: {
-        marginHorizontal: 45,
+        marginHorizontal: 20,
         alignItems: "center",
         justifyContent: 'center',
         backgroundColor: '#3F6A84',

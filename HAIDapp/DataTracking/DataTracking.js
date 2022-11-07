@@ -41,7 +41,7 @@ export default function DataTracking(props){
 
             <View style = {styles.continueBtn}>
   
-                <Pressable onPress={() => props.navigation.navigate("Home")}>
+                <Pressable onPress={() => props.navigation.navigate("Preferences", {exit: props.navigation.navigate("LoadingPage")})}>
                     <Text style= {styles.continuetext}> Continue </Text>
                 </Pressable>
 

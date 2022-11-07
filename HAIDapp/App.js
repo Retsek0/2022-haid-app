@@ -6,6 +6,8 @@ import SignUp from './SignUp/SignUp.js';
 import LandingPage from "./LandingPage/LandingPage.js";
 import TermsAndConditions from "./TermsAndConditions/TermsAndConditions.js";
 import DataTracking from "./DataTracking/DataTracking";
+import Preferences from "./Preferences/Preferences";
+import LoadingPage from "./LoadingPage/LoadingPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +21,8 @@ export default function App() {
         <Stack.Screen name="TermsAndConditions" component={TermsAndConditions}/>
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="DataTracking" component={DataTracking}/>
+        <Stack.Screen name="Preferences" component={Preferences}/>
+        <Stack.Screen name="LoadingPage" component={LoadingPage}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

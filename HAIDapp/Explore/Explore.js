@@ -13,6 +13,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 export default function ExploreNav(props) {
     const [filter, setFilter] = useState("airline");
     const [searched, setSearched] = useState(false);
+    const [listingOrder, setListingOrder] = useState(1);
 
     if (searched) {
         return (
@@ -20,7 +21,7 @@ export default function ExploreNav(props) {
                 <View style={{ height: 50 }}/>
                 <Pressable style = {styles.inputContainer} onPress={() => {
                     if (filter == "airline") {
-                        props.navigation.navigate("AirlineFiltering");
+                        props.navigation.navigate("AirlineFiltering", {setOrder: setListingOrder});
                     } else if (filter == "hotel") {
                         props.navigation.navigate("HotelFiltering");
                     } else {
@@ -58,9 +59,13 @@ export default function ExploreNav(props) {
                 <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
                     <View>
                         <View style={{height: 12}} />
-                        {listings.filter(listing => listing.type == filter).map((listing, i) => {
-                            return <View key={i}><Listing listing={listing} saved={false}/><View style={{height: 6}} /></View>
-                        })}
+                        {listings
+                            .filter(listing => listing.type == filter)
+                            .sort((a,b) => (a.price > b.price) ? listingOrder*1 : ((b.price > a.price) ? listingOrder*-1 : 0))
+                            .map((listing, i) => {
+                                return <View key={i}><Listing listing={listing} saved={false}/><View style={{height: 6}} /></View>
+                            })
+                        }
                     </View>
                 </ScrollView>
             </View>

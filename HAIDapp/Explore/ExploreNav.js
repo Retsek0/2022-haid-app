@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import AirlineFiltering from '../Filtering/AirlineFiltering';
 import CarFiltering from '../Filtering/CarFiltering';
+import HotelFiltering from '../Filtering/HotelFiltering';
 import Explore from "./Explore";
 
 const Stack = createNativeStackNavigator();
@@ -12,6 +13,7 @@ export default function Checkout(props) {
             <Stack.Screen name={"Explore"} component={Explore}/>
             <Stack.Screen name={"AirlineFiltering"} component={AirlineFiltering}/>
             <Stack.Screen name={"CarFiltering"} component={CarFiltering} />
+            <Stack.Screen name={"HotelFiltering"} component={HotelFiltering} />
         </Stack.Navigator>
     );
 }

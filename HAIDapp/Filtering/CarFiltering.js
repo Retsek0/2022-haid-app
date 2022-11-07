@@ -5,8 +5,7 @@ import Checkbox from 'expo-checkbox';
 
 export default function AirelineFiltering(props) {
 
-    const [isChecked1, setChecked1] = useState(false);
-    const [isChecked2, setChecked2] = useState(false);
+    const [isChecked1, setChecked1] = useState(true);
 
     const [isChecked3, setChecked3] = useState(false);
     const [isChecked4, setChecked4] = useState(false);
@@ -40,7 +39,7 @@ export default function AirelineFiltering(props) {
                             <Checkbox
                             style={styles.checkbox}
                             value={isChecked1}
-                            onValueChange={setChecked1}
+                            onValueChange={() => setChecked1(true)}
                             color={isChecked1 ? '#4630EB' : undefined}
                             />
                             <Text style={styles.paragraph}>Lowest to highest</Text>
@@ -51,9 +50,9 @@ export default function AirelineFiltering(props) {
 
                             <Checkbox
                             style={styles.checkbox}
-                            value={isChecked2}
-                            onValueChange={setChecked2}
-                            color={isChecked2 ? '#4630EB' : undefined}
+                            value={!isChecked1}
+                            onValueChange={() => setChecked1(false)}
+                            color={!isChecked1 ? '#4630EB' : undefined}
                             />
                             <Text style={styles.paragraph}>Highest to lowest</Text>
                         </View>

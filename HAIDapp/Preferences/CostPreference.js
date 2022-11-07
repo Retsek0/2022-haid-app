@@ -7,8 +7,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 export default function CostPreference(props) {
     return (
         <View style={Style.container}>
-
-            <ProgressBar style={Style.progressBar}progress={0.25} color="#3F6A84" /> 
+            <View style={Style.progressBar}>
+                <ProgressBar progress={0.25} color="#3F6A84"/> 
+            </View>
             <View style={Style.greetingContainer}>
                 <Text style={Style.greeting}> Help us get to know you better!</Text>
                 <Text style={Style.greeting}> Select all that apply </Text>
@@ -48,12 +49,13 @@ const Style = StyleSheet.create({
     },
 
     progressBar: {
-        height: "10%",
-        width: "50%",
-        marginTop: "15%",
+        marginTop: "12%",
+        height: "auto",
+        width: "80%",
     },
 
     greetingContainer: {
+        marginTop: 20,
         width: "60%",
         alignItems: "center",
     },  
@@ -108,8 +110,8 @@ const Style = StyleSheet.create({
     continueContainer: {
         backgroundColor: "#3F6A84",
         width: "100%",
-        height: "12%",
-        marginTop: "15%",
+        height: "13%",
+        marginTop: "22%",
         alignItems: "center",
         justifyContent: "center",
     },

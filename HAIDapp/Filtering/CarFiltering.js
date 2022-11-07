@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {StyleSheet, Text, View, Pressable, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, Pressable} from 'react-native';
 import Icon from '@expo/vector-icons/AntDesign';
 import Checkbox from 'expo-checkbox';
 
-export default function AirlineFiltering(props) {
+export default function AirelineFiltering(props) {
 
     const [isChecked1, setChecked1] = useState(false);
     const [isChecked2, setChecked2] = useState(false);
@@ -27,14 +27,13 @@ export default function AirlineFiltering(props) {
         <View style={styles.container}>
 
                 <View style={styles.header}>
-                    <Icon name="user" color={"#00716F"} size={60} style={{paddingTop: 8}} />
+                    <Icon name="user" color={"#00716F"} size={60} />
                     <Text style = {styles.greetingText}> Hi, Kieran </Text>
                 </View>
 
                 <View style={styles.mainFiltering}>
-
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> Price</Text>
+                        <Text style={styles.name}> Price </Text>
 
                         <View style={styles.checkBox}>
                             
@@ -130,7 +129,7 @@ export default function AirlineFiltering(props) {
                     </View>
 
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> Class </Text>
+                        <Text style={styles.name}> Number of Seats </Text>
 
 
                         <View style={styles.checkBox}>
@@ -141,7 +140,7 @@ export default function AirlineFiltering(props) {
                             onValueChange={setChecked8}
                             color={isChecked8 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>First</Text>
+                            <Text style={styles.paragraph}>2</Text>
 
                             <Checkbox
                             style={styles.checkboxRow}
@@ -149,7 +148,7 @@ export default function AirlineFiltering(props) {
                             onValueChange={setChecked9}
                             color={isChecked9 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>Economy</Text>
+                            <Text style={styles.paragraph}>4</Text>
 
                         </View>
 
@@ -162,14 +161,14 @@ export default function AirlineFiltering(props) {
                             onValueChange={setChecked10}
                             color={isChecked10 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>Business</Text>
+                            <Text style={styles.paragraph}>4+</Text>
 
                         </View>
 
                     </View>
 
                     <View style={styles.eachFilter}>
-                        <Text style={styles.name}> Changes</Text>
+                        <Text style={styles.name}> Transmission type </Text>
                         <View style={styles.checkBox}>
 
                             <Checkbox
@@ -178,7 +177,7 @@ export default function AirlineFiltering(props) {
                             onValueChange={setChecked11}
                             color={isChecked11 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>Direct</Text>
+                            <Text style={styles.paragraph}>Automatic</Text>
 
                             <Checkbox
                             style={styles.checkboxRow}
@@ -186,7 +185,7 @@ export default function AirlineFiltering(props) {
                             onValueChange={setChecked12}
                             color={isChecked12 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>One change</Text>
+                            <Text style={styles.paragraph}>Manual</Text>
 
                         </View>
 
@@ -197,20 +196,17 @@ export default function AirlineFiltering(props) {
                             onValueChange={setChecked13}
                             color={isChecked13 ? '#4630EB' : undefined}
                             />
-                            <Text style={styles.paragraph}>More than one change</Text>
+                            <Text style={styles.paragraph}>CVT</Text>
                         </View>
                     </View>
                 </View>
 
                 <View style={styles.btnContainer}>
-
                     <View style = {styles.eachBtn}>
-
                         <Pressable onPress={() => props.navigation.navigate("Explore")}>
                             <Text style= {styles.applytext}> Apply </Text>
                         </Pressable>
                     </View>
-
                     <View style = {styles.eachBtn}>
                         <Pressable onPress={() => props.navigation.navigate("Explore")}>
                             <Text style= {styles.applytext}> Cancel </Text>

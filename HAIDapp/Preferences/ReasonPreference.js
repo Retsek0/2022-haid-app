@@ -4,37 +4,38 @@ import { Fontisto } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
-export default function CostPreference(props) {
+export default function ReasonPreference(props) {
     return (
         <View style={Style.container}>
             <View style={Style.progressBar}>
-                <ProgressBar progress={0.25} color="#3F6A84"/> 
+                <ProgressBar progress={0} color="#3F6A84"/> 
             </View>
             <View style={Style.greetingContainer}>
-                <Text style={Style.greeting}>Good Job! Do you know travel can cost less than you think?</Text>
+                <Text style={Style.greeting}> Help us get to know you better!</Text>
+                <Text style={Style.greeting}> Select all that apply </Text>
             </View> 
 
             <View style={Style.titleContainer}>
-                <Text style={Style.title}>Select your cost preference while travelling </Text>
+                <Text style={Style.title}>What would be the reason for your travel?</Text>
             </View>
 
             <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText}>Budget-friendly</Text>
-                <MaterialIcons style={Style.icon} name="money-off" size={50} color="#00716F" />
+                <Text style={Style.fillInText}>Family                </Text>
+                <MaterialIcons style={Style.icon} name="family-restroom" size={50} color="#00716F" />
             </Pressable>
 
             <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText} > No Preference </Text>
-                <FontAwesome5 style={Style.icon}  name="money-bill-wave" size={50} color="#00716F" />
+                <Text style={Style.fillInText} >Romantic            </Text>
+                <FontAwesome5 style={Style.icon}  name="heartbeat" size={50} color="#00716F" />
             </Pressable>
 
             <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText}>Luxury               </Text>
-                <Fontisto style={Style.icon} name="holiday-village" size={45} color="#00716F" />
+                <Text style={Style.fillInText}>Business               </Text>
+                <FontAwesome5 style={Style.icon}  name="business-time" size={50} color="#00716F" />
             </Pressable>
 
             
-            <Pressable style={Style.continueContainer} onPress={() => props.navigation.navigate("StayPreference")}>
+            <Pressable style={Style.continueContainer} onPress={() => props.navigation.navigate("CostPreference")}>
                 <Text style={Style.continueText}>CONTINUE</Text>
             </Pressable>
         </View>
@@ -63,7 +64,7 @@ const Style = StyleSheet.create({
         fontSize: 15,
         lineHeight: 20,
         color: "#3F6A84",
-        fontWeight: "600",
+        fontWeight: "600"
     },  
 
     titleContainer: {

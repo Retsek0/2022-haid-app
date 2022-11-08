@@ -6,16 +6,10 @@ export default function CarPreference(props) {
         <View style={Style.container}>
             <View style={Style.greetingContainer}>
                 <MaterialCommunityIcons style={Style.icon} name="robot-love-outline" size={130} color="whitesmoke" />
-                <Text style={Style.greetingText}>Thanks for your very honest response! 
-                We are finding the best travel plan for you!</Text>
+                <Text style={Style.greetingText}>Thanks for your responses, we are generating your suggestions!</Text>
             </View>
-            <ActivityIndicator size="large" color="whitesmoke" marginTop={"12%"}/>
-            <View style={Style.tipsContainer}>
-                <Text style={Style.tipsTxt}>“The journey of a thousand miles begins with a single step.”</Text>
-            </View>
-
-            <Pressable  style={Style.btn} onPress={() => props.navigation.navigate("Home")}>
-                <Text style={Style.btnText}>Start</Text>
+            <Pressable style={{marginTop: 60}} onPress={() => props.navigation.navigate("Home")}>
+                <ActivityIndicator size="large" style={{ transform: [{ scaleX: 2 }, { scaleY: 2 }] }} color="whitesmoke"/>
             </Pressable>
         </View>
     );
@@ -41,7 +35,8 @@ const Style = StyleSheet.create({
         fontSize: 29,
         fontWeight: "700",
         marginTop: 30,
-        color: "black"
+        color: "white",
+        textAlign: "center"
     },
 
     tipsContainer: {

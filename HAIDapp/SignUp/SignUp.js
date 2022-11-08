@@ -6,7 +6,7 @@ import Icon from '@expo/vector-icons/AntDesign';
 
 export default function SignUp(props) {
   return (
-    <KeyboardAvoidingView 
+    <View 
     style={styles.container}
     behavior="padding"
     >
@@ -67,7 +67,7 @@ export default function SignUp(props) {
   
       <StatusBar style="auto" />
   
-    </KeyboardAvoidingView>
+    </View>
   );
   }
   

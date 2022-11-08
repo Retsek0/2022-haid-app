@@ -1,3 +1,4 @@
+import { React, useState } from 'react';
 import { View, Pressable, Text, StyleSheet} from "react-native";
 import { ProgressBar} from 'react-native-paper';
 import { Fontisto } from '@expo/vector-icons'; 
@@ -5,6 +6,10 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
 export default function CostPreference(props) {
+    const [luxury, setLuxury] = useState(false);
+    const [budget, setBudget] = useState(false);
+    const [none, setNone] = useState(false);
+    
     return (
         <View style={Style.container}>
             <View style={Style.progressBar}>
@@ -18,22 +23,21 @@ export default function CostPreference(props) {
                 <Text style={Style.title}>Select your cost preference while travelling </Text>
             </View>
 
-            <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText}>Budget-friendly</Text>
-                <MaterialIcons style={Style.icon} name="money-off" size={50} color="#00716F" />
-            </Pressable>
-
-            <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText} > No Preference </Text>
-                <FontAwesome5 style={Style.icon}  name="money-bill-wave" size={50} color="#00716F" />
-            </Pressable>
-
-            <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText}>Luxury               </Text>
+            <Pressable style={luxury ? Style.fillInSelected : Style.fillInUnselected} onPress={() => setLuxury(prevState => !prevState)}>
+                <Text style={[Style.fillInText, {color: luxury ? "black" : "#909090"}]}>Luxury</Text>
                 <Fontisto style={Style.icon} name="holiday-village" size={45} color="#00716F" />
             </Pressable>
 
-            
+            <Pressable style={budget ? Style.fillInSelected : Style.fillInUnselected} onPress={() => setBudget(prevState => !prevState)}>
+                <Text style={[Style.fillInText, {color: budget ? "black" : "#909090"}]}>Budget-friendly</Text>
+                <MaterialIcons style={Style.icon} name="money-off" size={50} color="#00716F" />
+            </Pressable>
+
+            <Pressable style={none ? Style.fillInSelected : Style.fillInUnselected} onPress={() => setNone(prevState => !prevState)}>
+                <Text style={[Style.fillInText, {color: none ? "black" : "#909090"}]} > No Preference </Text>
+                <FontAwesome5 style={Style.icon}  name="money-bill-wave" size={50} color="#00716F" />
+            </Pressable>
+
             <Pressable style={Style.continueContainer} onPress={() => props.navigation.navigate("StayPreference")}>
                 <Text style={Style.continueText}>CONTINUE</Text>
             </Pressable>
@@ -43,6 +47,7 @@ export default function CostPreference(props) {
 
 const Style = StyleSheet.create({
     container: {
+        flex: 1,
         alignItems: "center",
         color: "whitesmoke"
     },
@@ -70,7 +75,7 @@ const Style = StyleSheet.create({
         width: "80%",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 30,
+        marginTop: 10,
     },  
 
     title: {
@@ -80,15 +85,28 @@ const Style = StyleSheet.create({
         color: "#3F6A84"
     },
 
-    fillIn: {
+    fillInUnselected: {
         flexDirection: "row",
         justifyContent: "center",
         alignContent: "center",
         width: "75%",
         height: "auto",
         backgroundColor: "white",
-        marginTop: "15%",
+        marginTop: 15,
         borderColor: "#A5A5A5",
+        borderRadius: 10,
+        borderWidth: 3,
+    },
+
+    fillInSelected: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignContent: "center",
+        width: "75%",
+        height: "auto",
+        backgroundColor: "#6792ac",
+        marginTop: 15,
+        borderColor: "black",
         borderRadius: 10,
         borderWidth: 3,
     },
@@ -97,7 +115,6 @@ const Style = StyleSheet.create({
         fontSize: 25,
         marginVertical: 30,
         marginRight: "10%",
-        color: "#909090",
         fontWeight: "600",
     },
 
@@ -107,10 +124,11 @@ const Style = StyleSheet.create({
     },
 
     continueContainer: {
+        flex: 1,
         backgroundColor: "#3F6A84",
         width: "100%",
         height: "10%",
-        marginTop: "14%",
+        marginTop: 180,
         alignItems: "center",
         justifyContent: "center",
     },

@@ -1,10 +1,15 @@
+import { React, useState } from 'react';
 import { View, Pressable, Text, StyleSheet} from "react-native";
 import { ProgressBar} from 'react-native-paper';
-import { Fontisto } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
 export default function ReasonPreference(props) {
+    const [family, setFamily] = useState(false);
+    const [romance, setRomance] = useState(false);
+    const [business, setBusiness] = useState(false);
+    const [adventure, setAdventure] = useState(false);
+    
     return (
         <View style={Style.container}>
             <View style={Style.progressBar}>
@@ -19,22 +24,26 @@ export default function ReasonPreference(props) {
                 <Text style={Style.title}>What would be the reason for your travel?</Text>
             </View>
 
-            <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText}>Family                </Text>
+            <Pressable style={family ? Style.fillInSelected : Style.fillInUnselected} onPress={() => setFamily(prevState => !prevState)}>
+                <Text style={[Style.fillInText, {color: family ? "black" : "#909090"}]}>Family</Text>
                 <MaterialIcons style={Style.icon} name="family-restroom" size={50} color="#00716F" />
             </Pressable>
 
-            <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText} >Romantic            </Text>
+            <Pressable style={romance ? Style.fillInSelected : Style.fillInUnselected} onPress={() => setRomance(prevState => !prevState)}>
+                <Text style={[Style.fillInText, {color: romance ? "black" : "#909090"}]} >Romance</Text>
                 <FontAwesome5 style={Style.icon}  name="heartbeat" size={50} color="#00716F" />
             </Pressable>
 
-            <Pressable style={Style.fillIn} onPress={() => props.navigation.navigate("StayPreference")}>
-                <Text style={Style.fillInText}>Business               </Text>
+            <Pressable style={business ? Style.fillInSelected : Style.fillInUnselected} onPress={() => setBusiness(prevState => !prevState)}>
+                <Text style={[Style.fillInText, {color: business ? "black" : "#909090"}]}>Business</Text>
                 <FontAwesome5 style={Style.icon}  name="business-time" size={50} color="#00716F" />
             </Pressable>
 
-            
+            <Pressable style={adventure ? Style.fillInSelected : Style.fillInUnselected} onPress={() => setAdventure(prevState => !prevState)}>
+                <Text style={[Style.fillInText, {color: adventure ? "black" : "#909090"}]}>Adventure</Text>
+                <FontAwesome5 style={Style.icon}  name="mountain" size={50} color="#00716F" />
+            </Pressable>
+
             <Pressable style={Style.continueContainer} onPress={() => props.navigation.navigate("CostPreference")}>
                 <Text style={Style.continueText}>CONTINUE</Text>
             </Pressable>
@@ -44,6 +53,7 @@ export default function ReasonPreference(props) {
 
 const Style = StyleSheet.create({
     container: {
+        flex: 1,
         alignItems: "center",
         color: "whitesmoke"
     },
@@ -55,7 +65,7 @@ const Style = StyleSheet.create({
     },
 
     greetingContainer: {
-        marginTop: 20,
+        marginTop: 5,
         width: "60%",
         alignItems: "center",
     },  
@@ -71,7 +81,7 @@ const Style = StyleSheet.create({
         width: "80%",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 30,
+        marginTop: 10,
     },  
 
     title: {
@@ -81,15 +91,28 @@ const Style = StyleSheet.create({
         color: "#3F6A84"
     },
 
-    fillIn: {
+    fillInUnselected: {
         flexDirection: "row",
         justifyContent: "center",
         alignContent: "center",
         width: "75%",
         height: "auto",
         backgroundColor: "white",
-        marginTop: "15%",
+        marginTop: 15,
         borderColor: "#A5A5A5",
+        borderRadius: 10,
+        borderWidth: 3,
+    },
+
+    fillInSelected: {
+        flexDirection: "row",
+        justifyContent: "center",
+        alignContent: "center",
+        width: "75%",
+        height: "auto",
+        backgroundColor: "#6792ac",
+        marginTop: 15,
+        borderColor: "black",
         borderRadius: 10,
         borderWidth: 3,
     },
@@ -98,7 +121,6 @@ const Style = StyleSheet.create({
         fontSize: 25,
         marginVertical: 30,
         marginRight: "10%",
-        color: "#909090",
         fontWeight: "600",
     },
 
@@ -108,10 +130,10 @@ const Style = StyleSheet.create({
     },
 
     continueContainer: {
+        flex: 1,
         backgroundColor: "#3F6A84",
         width: "100%",
-        height: "10%",
-        marginTop: "14%",
+        marginTop: 80,
         alignItems: "center",
         justifyContent: "center",
     },
